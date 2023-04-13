@@ -27,13 +27,13 @@ pipeline {
             steps {
 			
                 sh "docker run -dit --name my-running-appdocker -p 80:8080  tomcattes "
-                
+                 sleep 30 // seconds  
             }
         }
         stage('test url ') {
             steps {
                 sh 'curl -v http://192.168.29.248/annaApps/'
-                
+                sleep 60 // seconds
             }
         }
          stage('stop docker cont ') {
